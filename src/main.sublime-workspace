@@ -1,0 +1,228 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"draw",
+				"drawChessboardCorners"
+			],
+			[
+				"flip",
+				"flip_prob"
+			],
+			[
+				"center",
+				"center_angle"
+			],
+			[
+				"ce",
+				"center_image"
+			],
+			[
+				"aug",
+				"augmented_images"
+			],
+			[
+				"measure",
+				"measurements"
+			],
+			[
+				"ima",
+				"images"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/vrao_87/Documents/Projects/Term2/EKF_P1/CarND-Extended-Kalman-Filter-Project/install-mac.sh",
+		"/Users/vrao_87/Documents/Projects/VehicleDetectionAndTracking/CarND-Vehicle-Detection/writeup_template.md",
+		"/Users/vrao_87/Downloads/lane_fy.py",
+		"/Users/vrao_87/Documents/Projects/AdvancedLaneFinding/CarND-Advanced-Lane-Lines/Lane_finder.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/model.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/P3_Submission/AttmeptsWithGenerator/model_copy_almost_wo_drop.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/P3_Submission/model.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/P3_Submission/Readme.md",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/BestModels/model_copy_almost_wo_drop.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/P3_Submission/model_working_wo_drop.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/P3_Submission/Project_writeup.md",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/model_copy.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/BestModels/model_working_wo_drop.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/BestModels/model_copy.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/BestModels/model.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/model copy.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/CarND-Behavioral-Cloning-P3/drive.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/BehavioralCloning/model.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/TransferLearning/CarND-Transfer-Learning-Lab/feature_extraction.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/AlexNet/CarND-Alexnet-Feature-Extraction/train_feature_extraction.py",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/AlexNet/CarND-Alexnet-Feature-Extraction/feature_extraction.py",
+		"/Alexenet_firs",
+		"/Users/vrao_87/Downloads/P1/P1.md",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/TrafficSignClassifier/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier_P2/Traffic_Sign_Classifier.ipynb",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/TrafficSignClassifier/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier_P2/Traffic_Sign_Classifier-2.ipynb",
+		"/Users/vrao_87/Documents/Projects/LaneFinder/CarND-LaneLines-P1/writeup_template.md",
+		"/Users/vrao_87/Documents/Projects/LaneFinder/CarND-LaneLines-P1/P1.ipynb",
+		"/Users/vrao_87/Documents/Projects/LaneFinder/CarND-LaneLines-P1/README.md",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/CarND-TensorFlow-Lab/lab.ipynb",
+		"/Users/vrao_87/Documents/Projects/LaneFinder/CarND-LaneLines-P1/test_videos_output/Final_out/P1/P1.md",
+		"/Users/vrao_87/Documents/Projects/LaneFinder/CarND-LaneLines-P1/test_videos_output/Final_out/P1-2.ipynb",
+		"/Users/vrao_87/Documents/Projects/NeuralNetworks/TrafficSignClassifier/CarND-Traffic-Sign-Classifier-Project/README.md",
+		"/Users/vrao_87/Documents/ProcessImage",
+		"/Users/vrao_87/Documents/helperFunc",
+		"/Users/vrao_87/Downloads/P1.ipynb",
+		"/Users/vrao_87/Downloads/eric6-17.06/install.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -53,5 +53,23 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   TODO:
     * update the state by using Extended Kalman Filter equations
   */
+  /* Convert the predicted state from cartesian to polar co-ordinates to compute error */
+    double rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
+    double theta = atan(x_(1) / x_(0));
+    double rho_dot = (x_(0)*x_(2) + x_(1)*x_(3)) / rho;
+    VectorXd h = VectorXd(3); // h(x_)
+    h << rho, theta, rho_dot;
+  
+    VectorXd y = z - h;
+
+    MatrixXd H_t = H_.transpose();
+    MatrixXd S = H_ * P_ * H_t + R_;
+    MatrixXd S_i = S.inverse();
+    MatrixXd K =  P_ * H_t * S_i;
+    // New state
+    x_ = x_ + (K * y);
+    int x_size = x_.size();
+    MatrixXd I = MatrixXd::Identity(x_size, x_size);
+    P_ = (I - K * H_) * P_;
 
 }

@@ -38,8 +38,6 @@ FusionEKF::FusionEKF() {
     * Finish initializing the FusionEKF.
     * Set the process and measurement noises
   */
-
-
 }
 
 /**

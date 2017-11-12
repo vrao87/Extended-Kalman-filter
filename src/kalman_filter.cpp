@@ -1,4 +1,5 @@
 #include "kalman_filter.h"
+#include <iostream>
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -36,16 +37,9 @@ void KalmanFilter::Update(const VectorXd &z) {
     * update the state by using Kalman Filter equations
   */
   VectorXd y = z - H_ * x_;
-  MatrixXd H_t = H_.transpose();
-  MatrixXd S = H_ * P_ * H_t + R_;
-  MatrixXd S_i = S.inverse();
-  MatrixXd K =  P_ * H_t * S_i;
-  // New state
-  x_ = x_ + (K * y);
-  int x_size = x_.size();
-  MatrixXd I = MatrixXd::Identity(x_size, x_size);
-  P_ = (I - K * H_) * P_;
 
+  /* Remaining calculations are common to Kalman and EKF update */
+    UpdateMatrices(y);
 }
 
 void KalmanFilter::UpdateEKF(const VectorXd &z) {
@@ -54,22 +48,50 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     * update the state by using Extended Kalman Filter equations
   */
   /* Convert the predicted state from cartesian to polar co-ordinates to compute error */
-    double rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
-    double theta = atan(x_(1) / x_(0));
-    double rho_dot = (x_(0)*x_(2) + x_(1)*x_(3)) / rho;
+    float rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
+    float theta = atan2(x_(1) , x_(0));                    // atan2 returns value between -pi,pi
+    
+    if(rho < 0.00001)
+    {
+      rho = 0.00001;
+    }
+    
+    float rho_dot = (x_(0)*x_(2) + x_(1)*x_(3)) / rho;
     VectorXd h = VectorXd(3); // h(x_)
     h << rho, theta, rho_dot;
-  
+
+    /***************** Debug info ****************************/
+    std::cout << " theta: " << z[1] << std::endl;
+    std::cout << "theta pred " << theta << std::endl; 
+    /***************** End ****************************/
+    
     VectorXd y = z - h;
+    
+    /***************** Debug info ****************************/
+    std::cout << "theta diff " << y[1] << std::endl; 
+    /***************** End ****************************/
 
-    MatrixXd H_t = H_.transpose();
-    MatrixXd S = H_ * P_ * H_t + R_;
-    MatrixXd S_i = S.inverse();
-    MatrixXd K =  P_ * H_t * S_i;
-    // New state
-    x_ = x_ + (K * y);
-    int x_size = x_.size();
-    MatrixXd I = MatrixXd::Identity(x_size, x_size);
-    P_ = (I - K * H_) * P_;
+    /* Normalize computed error in theta so that it is also within -pi,pi range */
+    y[1] = atan2(sin(y[1]),cos(y[1]));
 
+    /***************** Debug info ****************************/
+    std::cout << "theta diff normalized " << y[1] << std::endl; 
+    /***************** End ****************************/
+
+    /* Remaining calculations are common to Kalman and EKF update */
+    UpdateMatrices(y);
+
+}
+
+/*  Update Kalman Filter steps common to EKF and KF update. Equations from the lectures */
+void KalmanFilter::UpdateMatrices(const VectorXd &y){
+  MatrixXd Ht = H_.transpose();
+  MatrixXd S = H_ * P_ * Ht + R_;
+  MatrixXd Si = S.inverse();
+  MatrixXd K =  P_ * Ht * Si;
+  // New state
+  x_ = x_ + (K * y);
+  int x_size = x_.size();
+  MatrixXd I = MatrixXd::Identity(x_size, x_size);
+  P_ = (I - K * H_) * P_;
 }

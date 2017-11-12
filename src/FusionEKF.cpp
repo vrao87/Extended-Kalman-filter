@@ -93,6 +93,14 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
                0, 0, 1000, 0,
                0, 0, 0, 1000;
 
+    /* Initialize state transition matrix */
+    ekf_.F_ = MatrixXd(4, 4);
+    ekf_.F_ << 1, 0, 1, 0,
+               0, 1, 0, 1,
+               0, 0, 1, 0,
+               0, 0, 0, 1;
+
+    previous_timestamp_ = measurement_pack.timestamp_;
     // done initializing, no need to predict or update
     is_initialized_ = true;
     return;
@@ -111,16 +119,13 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
      * Use noise_ax = 9 and noise_ay = 9 for your Q matrix.
    */
   // Calculate the timestep between measurements in seconds
-  float dt = (measurement_pack.timestamp_ - previous_timestamp_);
-  dt /= 1000000.0; // convert micros to s
+  float dt = (measurement_pack.timestamp_ - previous_timestamp_)/1000000.0;// convert micros to s
+  //std::cout << "dt :"<< dt << std::endl;
   previous_timestamp_ = measurement_pack.timestamp_;
 
-  // State transition matrix update
-  ekf_.F_ = MatrixXd(4, 4);
-  ekf_.F_ << 1, 0, dt, 0,
-             0, 1, 0, dt,
-             0, 0, 1, 0,
-             0, 0, 0, 1;
+  // State transition matrix update to integrate time step
+  ekf_.F_(0, 2) = dt;
+  ekf_.F_(1, 3) = dt;
 
   /* Create and compute co-variance matrix */
   ekf_.Q_ = MatrixXd(4, 4);
